@@ -1,5 +1,4 @@
-"""Main entry point for 3D N-body gravitational simulation.
-
+"""
 Usage:
     python main.py                    # default: solar system, 500 bodies
     python main.py solar 800          # solar system with 800 bodies
@@ -14,23 +13,17 @@ from renderer import Renderer
 
 
 def load_scenario(name, N):
-    """Return (positions, velocities, masses) for the given scenario.
-
-    Args:
-        name: Scenario name: "solar", "cloud", "binary".
-        N: Requested number of bodies.
-
-    Returns:
-        Tuple of numpy arrays: (positions, velocities, masses).
-    """
     if name == "solar":
         from scenarios.solar_system import create
+
         return create(N)
     elif name == "cloud":
         from scenarios.random_cloud import create
+
         return create(N)
     elif name == "binary":
         from scenarios.binary_star import create
+
         return create(N)
     else:
         raise ValueError(f"Unknown scenario: {name}")

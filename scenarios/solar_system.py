@@ -1,20 +1,7 @@
-"""Solar system scenario: central star + orbiting planets.
-
-Creates one heavy central body and N-1 lighter bodies in circular orbits.
-Orbital velocities are computed from Newtonian gravity for stability.
-"""
-
 import numpy as np
 
 
 def create(N: int):
-    """Create solar system with N bodies.
-
-    Returns:
-        positions: (N, 3) array.
-        velocities: (N, 3) array.
-        masses: (N,) array.
-    """
     # Central star: 90% of total mass
     central_mass = 5000.0
 

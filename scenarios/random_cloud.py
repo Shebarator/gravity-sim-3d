@@ -1,20 +1,7 @@
-"""Random cloud scenario: N bodies with random positions and velocities.
-
-Bodies are distributed in a sphere with small random velocities.
-Gravity causes them to collapse and form clusters.
-"""
-
 import numpy as np
 
 
 def create(N: int):
-    """Create random cloud of N bodies.
-
-    Returns:
-        positions: (N, 3) array.
-        velocities: (N, 3) array.
-        masses: (N,) array.
-    """
     # Uniform distribution in a sphere of radius 30
     positions = np.zeros((N, 3), dtype=np.float32)
 

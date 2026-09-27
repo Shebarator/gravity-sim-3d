@@ -1,20 +1,7 @@
-"""Binary star scenario: two heavy bodies orbiting each other.
-
-Two central stars at opposite ends of an orbit, with lighter bodies
-around them. Creates chaotic dynamics with three-body interactions.
-"""
-
 import numpy as np
 
 
 def create(N: int):
-    """Create binary star system with N bodies.
-
-    Returns:
-        positions: (N, 3) array.
-        velocities: (N, 3) array.
-        masses: (N,) array.
-    """
     # Two heavy stars
     m1, m2 = 3000.0, 3000.0
     # Total mass
@@ -44,7 +31,7 @@ def create(N: int):
     v1 = v_rel * m2 / M
     v2 = v_rel * m1 / M
 
-    velocities[0] = [0, v1, 0]   # star 1 moves +y
+    velocities[0] = [0, v1, 0]  # star 1 moves +y
     velocities[1] = [0, -v2, 0]  # star 2 moves -y
 
     # Remaining bodies: random in a shell around the binary
